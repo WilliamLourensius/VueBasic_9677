@@ -16,6 +16,7 @@
     <form name="form">
       <div class="div" v-if="path == '.'">
           <p>Hi, I have made up a number between 1 and 10.</p>
+
           <p>You have {{3-i}} attempts to guess this number.</p>
           <BR></BR>
           <p>Try now :</p>
@@ -81,6 +82,7 @@
       setRndNumber: function() {
         do {
           this.n = Math.ceil(Math.random()*10);
+          console.log(this.n)
         } while (this.n>10 || this.n<1);
       },
       inputlagi : function(){
