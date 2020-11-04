@@ -1,0 +1,16 @@
+html, body 
+{
+  box-sizing: border-box;
+  height: 100%;
+  padding: 25px;
+  background-color: #E5E5E5;
+}
+  
+#app
+{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+  
