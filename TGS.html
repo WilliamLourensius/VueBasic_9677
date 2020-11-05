@@ -11,11 +11,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
 </head>
-
+<style>
+  div.ex1 {
+  background-color: white;
+  width: 700px;
+  height: 500px;
+  overflow-y: scroll;
+}
+</style>
 <body>
   
 <div class="container float-left" id="app">
-    <div class="col-md-6 float-right">
+    <div class="col-md-6 float-right ex1">
         <ul class="list-group">
             <li class="list-group-item" v-for="t in tasks">
                 <span v-if="t.status == 'penting'" class="badge badge-light text-danger"> <h6>{{t.status}}</h6></span>
@@ -27,10 +34,9 @@
             <button @click="deleteTask" class="btn btn-danger float-right">Delete</button>
             </li>
         </ul>
-    
-        </div>
+      </div>
     <h1 class="col-md-12">To Do List</h1>
-    <div class="col-md-6">
+    <div class="col-md-6 mr-5">
         <div class="panel panel-default">
         <div class="panel-body">
             <div class="form-group">
@@ -56,9 +62,13 @@
     
         </div>
         </div>
-    </div>
-        
-        <script src="vue.js"></script>
+       
+    </div>   
+    <footer class="text-center" style="margin-top: 300px; margin-left: 200px;">
+      <p> {{ myData.nama }} | {{ myData.npm }} | {{ myData.kelas }} </p>
+   </footer>
+</body>
+<script src="vue.js"></script>
 <script>
  new Vue({
   el: '#app',
@@ -68,6 +78,11 @@
       desc: '',
       status: ''
     },    
+    myData: {
+          nama: 'William',
+          npm: 180709677,
+          kelas: 'D'                
+        },
     tasks: []
   },
 
@@ -101,7 +116,5 @@
   }
 });
 </script>
-</body>
-
 </html>   
 
